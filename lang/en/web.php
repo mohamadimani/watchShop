@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'hi' => 'Hi',
+    'done_date' => 'Done Date',
+    'link' => 'Link',
+    'dashboard' => 'Dashboard',
+    'menus' => 'Menus',
+    'skills' => 'Skills',
+    'contact-us' => 'Contact Us',
+    'services' => 'Services',
+    'portfolio' => 'Portfolio',
+    'about' => 'About Me',
+    'latest_projects' => 'Latest Projects',
+    'do_you_have_project' => 'Do you have a project in mind',
+    'close' => 'Close',
+    'name' => 'Name',
+    'mobile' => 'Mobile',
+    'your_message' => 'Your Message',
+    'send_message' => 'Send Message',
+    'feedback' => 'Feedback',
+    'experience' => 'Experience',
+    'awards' => 'Awards',
+    'happy_clients' => 'Happy Clients',
+    'success_projects' => 'Success Projects',
+];

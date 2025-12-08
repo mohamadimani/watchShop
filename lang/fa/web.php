@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'hi' => 'سلام',
+    'done_date' => 'زمان اتمام پروژه',
+    'link' => 'لینک پروژه',
+    'dashboard' => 'داشبورد',
+    'menus' => 'منوها',
+    'skills' => 'مهارت های من',
+    'contact-us' => 'تماس با ما',
+    'services' => 'آنچه ارائه می دهم',
+    'portfolio' => 'نمونه کارها',
+    'about' => 'درباره من',
+    'latest_projects' => 'پروژههای اخیر',
+    'do_you_have_project' => 'آیا پروژه ای در ذهن دارید؟',
+    'close' => 'بستن',
+    'name' => 'نام',
+    'mobile' => 'موبایل',
+    'your_message' => 'پیام شما',
+    'send_message' => 'ارسال پیام',
+    'feedback' => 'مشتریان راضی',
+    'experience' => 'تجربه',
+    'awards' => 'جایزه ها',
+    'happy_clients' => 'مشتریان راضی',
+    'success_projects' => 'پروژه های موفق',
+];
