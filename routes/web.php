@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialController;
 use Illuminate\Support\Facades\App;
@@ -33,5 +34,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
 // web
 Route::middleware([])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('contact-us', [HomeController::class, 'contactUs'])->name('contact-us.index');
+    Route::post('contact-us', [HomeController::class, 'contactUsStore'])->name('contact-us.store');
+
+    Route::get('products', [ProductController::class, 'index'])->name('products.index');
 });
