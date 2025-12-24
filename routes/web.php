@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -29,7 +30,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('services', [ServiceController::class, 'index'])->name('services');
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('social', [SocialController::class, 'index'])->name('social');
-    Route::get('product/{product}/feedbacks', [PortfolioController::class, 'feedbacks'])->name('product.feedbacks');
+
+
+    Route::get('products/index', [AdminProductController::class, 'index'])->name('products.index');
+    Route::get('products/create', [AdminProductController::class, 'create'])->name('products.create');
+    Route::post('products/store', [AdminProductController::class, 'store'])->name('products.store');
+    Route::get('products/edit', [AdminProductController::class, 'edit'])->name('products.edit');
+    Route::post('products/update', [AdminProductController::class, 'update'])->name('products.update');
 });
 
 // web

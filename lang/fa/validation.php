@@ -245,6 +245,12 @@ return [
         'summary_en' => 'توضیحات کوتاه (انگلیسی)',
         'customer_name' => 'نام مشتری',
         'feedback' => 'نظر مشتری',
+        'guaranty' => 'گارانتی',
+        'category_id' => 'دسته بندی',
+        'count' => 'دسته بندی',
+        'brand_id' => 'برند',
+        'colors' => 'رنگ',
+        'is_economy' => 'محصول اقتصادی',
     ],
 
 ];

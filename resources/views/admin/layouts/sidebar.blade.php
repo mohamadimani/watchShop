@@ -67,5 +67,17 @@
                 <div>{{ __('sidebar.social') }}</div>
             </a>
         </li>
+        <li class="menu-item {{ ActiveMenu('admin.products.index') }}">
+            <a href="{{ route('admin.products.index') }}" class="menu-link">
+                <i class="menu-icon bx bxl-dropbox"></i>
+                <div>محصولات</div>
+            </a>
+        </li>
+        <li class="menu-item {{ ActiveMenu('admin.products.create') }}">
+            <a href="{{ route('admin.products.create') }}" class="menu-link">
+                <i class="menu-icon bx bxl-shopify"></i>
+                <div>ایجاد محصول</div>
+            </a>
+        </li>
     </ul>
 </aside>
