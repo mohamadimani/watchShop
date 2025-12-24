@@ -20,12 +20,12 @@ class HomeController extends Controller
         $menus = Menu::active()->get();
         $socials = Social::active()->get();
         $feedbacks = Feedback::active()->get();
-        return view('home.index', compact('services', 'about', 'menus', 'socials', 'feedbacks'));
+        return view('web.home.index', compact('services', 'about', 'menus', 'socials', 'feedbacks'));
     }
 
     public function contactUs()
     {
-        return view('contactUs.index');
+        return view('web.contactUs.index');
     }
 
     public function contactUsStore(Request $request)

@@ -35,8 +35,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('products/index', [AdminProductController::class, 'index'])->name('products.index');
     Route::get('products/create', [AdminProductController::class, 'create'])->name('products.create');
     Route::post('products/store', [AdminProductController::class, 'store'])->name('products.store');
-    Route::get('products/edit', [AdminProductController::class, 'edit'])->name('products.edit');
-    Route::post('products/update', [AdminProductController::class, 'update'])->name('products.update');
+    Route::get('products/{product}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
+    Route::post('products/{product}/update', [AdminProductController::class, 'update'])->name('products.update');
 });
 
 // web
@@ -46,4 +46,5 @@ Route::middleware([])->group(function () {
     Route::post('contact-us', [HomeController::class, 'contactUsStore'])->name('contact-us.store');
 
     Route::get('products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('products/{product}/show', [ProductController::class, 'show'])->name('products.show');
 });

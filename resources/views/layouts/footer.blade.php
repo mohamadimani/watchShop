@@ -1,3 +1,68 @@
+<!--==================== Newslatter Section Start ====================-->
+<div class="full-row bg-secondary py-3">
+    <div class="container text-center">
+        <div class="row">
+            <div class="text-center">
+                <div class="align-items-center h-100 text-center">
+                    <h4 class="text-primary text-center">ساعت مهدیار</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="full-row bg-white">
+    <div class="container">
+        <div class="row row-cols-xxl-5 row-cols-xl-3 row-cols-sm-2 row-cols-1 g-0 gy-4 gy-xxl-0">
+            <div class="col">
+                <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                    <i class="flaticon-smartphone-1 flat-medium text-secondary"></i>
+                    <div class="mr-10">
+                        <h5 class="mb-1"><a href="#" class="text-dark hover-text-primary transation-this">قیمت مناسب</a></h5>
+                        <p>قیمت گذاری مناسب محصولات سایت</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                    <i class="flaticon-airplane flat-medium text-secondary"></i>
+                    <div class="mr-10">
+                        <h5 class="mb-1"><a href="#" class="text-dark hover-text-primary transation-this">ارسال به تمام نقاط دنیا</a></h5>
+                        <p>ارسال محصول به بیش از 200 شهر</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                    <i class="flaticon-life-insurance flat-medium text-secondary"></i>
+                    <div class="mr-10">
+                        <h5 class="mb-1"><a href="#" class="text-dark hover-text-primary transation-this">پرداخت امن</a></h5>
+                        <p>بهترین تجربه پرداخت آنلاین هنگام خرید</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                    <i class="flaticon-shopping-1 flat-medium text-secondary"></i>
+                    <div class="mr-10">
+                        <h5 class="mb-1"><a href="#" class="text-dark hover-text-primary transation-this">خرید مطمئن</a></h5>
+                        <p>بهبود رابط کاربری و تجربه یک خرید آسان</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                    <i class="flaticon-24-hours flat-medium text-secondary"></i>
+                    <div class="mr-10">
+                        <h5 class="mb-1"><a href="#" class="text-dark hover-text-primary transation-this">خدمات مشتری</a></h5>
+                        <p>پشتیبانی آنلاین و تلفنی به صورت 24 ساعت </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--==================== Service Info Section End ====================-->
 <footer class="full-row bg-white p-0">
     <div class="container">
         <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-1">
