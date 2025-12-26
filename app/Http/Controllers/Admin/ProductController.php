@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\ProductGallery;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,9 +26,6 @@ class ProductController extends Controller
         return view('admin.products.create', compact('brands', 'categories', 'colors'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreProductRequest $request)
     {
         $product = Product::create([
@@ -48,7 +46,6 @@ class ProductController extends Controller
         }
         return redirect()->back()->withError('مشکل در ثبت');
     }
-
 
     public function edit(Product $product)
     {
@@ -73,6 +70,29 @@ class ProductController extends Controller
             if ($request->colors) {
                 $product->colors()->sync($request->colors);
             }
+            return redirect()->back()->withSuccess('با موفقیت ثبت شد');
+        }
+        return redirect()->back()->withError('مشکل در ثبت');
+    }
+
+    public function galleryIndex(Product $product)
+    {
+        return view('admin.products.gallery-index', compact('product'));
+    }
+
+    public function galleryStore(Request $request, Product $product)
+    {
+        $imageName = null;
+        $imageName = SaveImage($request->image, 'products/gallery');
+
+        $productGallery = ProductGallery::create([
+            'product_id' => $product->id,
+            'title' => $request->title,
+            'image' => $imageName,
+            'created_by' => user()->id,
+        ]);
+
+        if ($productGallery) {
             return redirect()->back()->withSuccess('با موفقیت ثبت شد');
         }
         return redirect()->back()->withError('مشکل در ثبت');

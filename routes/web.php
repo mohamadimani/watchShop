@@ -31,12 +31,15 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('social', [SocialController::class, 'index'])->name('social');
 
-
     Route::get('products/index', [AdminProductController::class, 'index'])->name('products.index');
     Route::get('products/create', [AdminProductController::class, 'create'])->name('products.create');
     Route::post('products/store', [AdminProductController::class, 'store'])->name('products.store');
     Route::get('products/{product}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
     Route::post('products/{product}/update', [AdminProductController::class, 'update'])->name('products.update');
+
+    Route::get('products/{product}/gallery', [AdminProductController::class, 'galleryIndex'])->name('products.galleryIndex');
+    Route::post('products/{product}/gallery', [AdminProductController::class, 'galleryStore'])->name('products.galleryStore');
+
 });
 
 // web
