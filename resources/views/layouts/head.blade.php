@@ -15,5 +15,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/template.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/category/watches.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/category/minimal.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
+
     @livewireStyles
 </head>

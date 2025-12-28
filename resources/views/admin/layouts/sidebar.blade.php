@@ -67,6 +67,18 @@
                 <div>{{ __('sidebar.social') }}</div>
             </a>
         </li>
+        <li class="menu-item {{ ActiveMenu('admin.categories.index') }}">
+            <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                <i class="menu-icon bx bx-category"></i>
+                <div>دسته بندی محصول</div>
+            </a>
+        </li>
+        <li class="menu-item {{ ActiveMenu('admin.categories.create') }}">
+            <a href="{{ route('admin.categories.create') }}" class="menu-link">
+                <i class="menu-icon bx bx-edit-alt"></i>
+                <div>ایجاد دسته بندی</div>
+            </a>
+        </li>
         <li class="menu-item {{ ActiveMenu('admin.products.index') }}">
             <a href="{{ route('admin.products.index') }}" class="menu-link">
                 <i class="menu-icon bx bxl-dropbox"></i>

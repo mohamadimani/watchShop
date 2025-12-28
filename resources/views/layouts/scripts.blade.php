@@ -9,6 +9,8 @@
 <script src="{{ asset('assets/js/jquery.countdown.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
+<script src="{{ asset('assets/js/jquery.elevatezoom.js') }}"></script>
+<script src="{{ asset('assets/js/app.js') }}"></script>
 <script>
     // Watch Demo Slider
     $('#watch-slider').layerSlider({
@@ -26,4 +28,22 @@
         height: 450
     });
 </script>
+
+<script>
+    //initiate the plugin and pass the id of the div containing gallery images
+    $("#single-image-zoom").elevateZoom({
+        gallery: 'gallery_09',
+        zoomType: "inner",
+        cursor: "crosshair",
+        galleryActiveClass: 'active',
+        imageCrossfade: true,
+    });
+    //pass the images to Fancybox
+    $("#single-image-zoom").bind("click", function(e) {
+        var ez = $('#single-image-zoom').data('elevateZoom');
+        $.fancybox(ez.getGalleryList());
+        return false;
+    });
+</script>
+
 @livewireScripts

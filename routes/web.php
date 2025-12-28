@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\LoginController;
@@ -40,6 +41,12 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('products/{product}/gallery', [AdminProductController::class, 'galleryIndex'])->name('products.galleryIndex');
     Route::post('products/{product}/gallery', [AdminProductController::class, 'galleryStore'])->name('products.galleryStore');
 
+
+    // category
+    Route::get('categories', [CategoriesController::class, 'index'])->name('categories.index');
+    Route::get('categories/create', [CategoriesController::class, 'create'])->name('categories.create');
+    Route::post('categories', [CategoriesController::class, 'store'])->name('categories.store');
+
 });
 
 // web
@@ -50,4 +57,5 @@ Route::middleware([])->group(function () {
 
     Route::get('products', [ProductController::class, 'index'])->name('products.index');
     Route::get('products/{product}/show', [ProductController::class, 'show'])->name('products.show');
+    Route::get('products/{search}', [ProductController::class, 'search'])->name('products.search');
 });

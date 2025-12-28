@@ -9,11 +9,10 @@
                             <form class="woocommerce-ordering" method="get">
                                 <select name="orderby" class="orderby" aria-label="Shop order">
                                     <option value="1" selected="selected">مرتب سازی پیش فرض</option>
-                                    <option value="2">مرتب سازی براساس محبوب ترین</option>
-                                    <option value="3">مرتب سازی براساس امتیاز بالا</option>
-                                    <option value="4">مرتب سازی براساس جدیدترین</option>
-                                    <option value="5">مرتب سازی براساس قیمت: پایین به بالا</option>
-                                    <option value="6">مرتب سازی براساس قیمت: بالا به پایین</option>
+                                    <option value="mostSell">پرفروش ترین</option>
+                                    <option value="mostViewed">پربازدید ترین</option>
+                                    <option value="expensive">گران ترین</option>
+                                    <option value="cheap">ارزان ترین</option>
                                 </select>
                             </form>
                         </div>
@@ -27,7 +26,7 @@
                                         <div class="product-wrapper">
                                             <div class="product-image">
                                                 <a href="{{ route('products.show', [$product->id]) }}" class="woocommerce-LoopProduct-link">
-                                                    <img src="assets/images/products/squire-79.png" alt="Product Image">
+                                                    <img src="{{ GetImage('products/gallery/' . ($product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}" alt="Product Image">
                                                 </a>
                                                 {{-- <div class="product-labels">
                                                     <div class="shape1-badge3"><span>جدید</span></div>

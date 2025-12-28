@@ -5,16 +5,38 @@
         <div class="container">
             <div class="row text-secondary">
                 <div class="col-sm-6">
-                    <h3 class="mb-2 text-secondary font-large">جزئیات محصول <span>{{ $product->title }}</span></h3>
+                    <h3 class="mb-2 text-secondary font-large">جزئیات محصول : <span class="text-info">{{ $product->title }}</span></h3>
                 </div>
             </div>
         </div>
     </div>
     <!-- breadcrumb -->
+    <style>
+        .four-carousel {
+            display: flex;
 
+        }
+
+        .four-carousel .item {
+            width: 100px;
+            height: 100px;
+        }
+
+        .four-carousel .item img {
+            width: 100%;
+            height: 100%;
+            border: 1px solid silver;
+        }
+
+        #single-image-zoom {
+            min-width: 100% !important;
+            max-height: 300px !important;
+        }
+    </style>
     <div class="full-row">
         <div class="container">
             <div class="row single-product-wrapper">
+
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="product-images">
                         <div class="images-inner">
@@ -22,41 +44,19 @@
                                 style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;">
                                 <figure class="woocommerce-product-gallery__wrapper">
                                     <div class="bg-light">
-                                        <img id="single-image-zoom" src="assets/images/products/squire-233.png" alt="Thumb Image" data-zoom-image="assets/images/products/squire-233.png" />
+                                        <img id="single-image-zoom" src="{{ GetImage('products/gallery/' . ($product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}" alt="Thumb Image"
+                                            data-zoom-image="{{ GetImage('products/gallery/' . ($product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}" />
                                     </div>
-
                                     <div id="gallery_09" class="product-slide-thumb">
-                                        <div class="owl-carousel four-carousel dot-disable nav-arrow-middle owl-mx-5" dir="ltr">
-                                            <div class="item">
-                                                <a class="active" href="#" data-image="assets/images/products/squire-269.png" data-zoom-image="assets/images/products/squire-269.png">
-                                                    <img src="assets/images/products/squire-269.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#" data-image="assets/images/products/squire-270.png" data-zoom-image="assets/images/products/squire-270.png">
-                                                    <img src="assets/images/products/squire-270.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#" data-image="assets/images/products/squire-271.png" data-zoom-image="assets/images/products/squire-271.png">
-                                                    <img src="assets/images/products/squire-271.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#" data-image="assets/images/products/squire-272.png" data-zoom-image="assets/images/products/squire-272.png">
-                                                    <img src="assets/images/products/squire-272.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#" data-image="assets/images/products/squire-269.png" data-zoom-image="assets/images/products/squire-269.png">
-                                                    <img src="assets/images/products/squire-269.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#" data-image="assets/images/products/squire-270.png" data-zoom-image="assets/images/products/squire-270.png">
-                                                    <img src="assets/images/products/squire-270.png" alt="Thumb Image" />
-                                                </a>
-                                            </div>
+                                        <div class="four-carousel  nav-arrow-middle owl-mx-5" dir="ltr">
+                                            @foreach ($product?->galleries as $image)
+                                                <div class="item">
+                                                    <a onclick="setMainImage(this)" data-image="{{ GetImage('products/gallery/' . $image->image) }}"
+                                                        data-zoom-image="{{ GetImage('products/gallery/' . $image->image) }}">
+                                                        <img src="{{ GetImage('products/gallery/' . $image->image) }}" alt="{{ $image->title }}" />
+                                                    </a>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </figure>
@@ -64,6 +64,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 col-lg-7">
                     <div class="summary entry-summary">
                         <div class="summary-inner">
@@ -144,8 +145,8 @@
                                     aria-label="Add to Wishlist">افزودن به علاقه مندی</a>
                             </div>
                             <div class="compare-button">
-                                <a class="compare button" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="مقایسه کالا"
-                                    aria-label="Compare">مقایسه کالا</a>
+                                <a class="compare button" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="مقایسه کالا" aria-label="Compare">مقایسه
+                                    کالا</a>
                             </div>
                         </div>
                         <div class="bigbazar-wc-message"></div>
@@ -168,10 +169,10 @@
                                     <a class="nav-link active" id="pills-description-one-tab" data-bs-toggle="pill" href="#pills-description-one" role="tab" aria-controls="pills-description-one"
                                         aria-selected="true">معرفی</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                {{-- <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="pills-information-one-tab" data-bs-toggle="pill" href="#pills-information-one" role="tab" aria-controls="pills-information-one"
                                         aria-selected="true">مشخصات</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -258,7 +259,7 @@
                                         <div class="product-wrapper">
                                             <div class="product-image">
                                                 <a href="{{ route('products.show', [$product->id]) }}" class="woocommerce-LoopProduct-link">
-                                                    <img src="{{ asset('assets/images/products/squire-79.png') }}" alt="Product Image">
+                                                    <img src="{{ GetImage('products/gallery/' . ($product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}" alt="Product Image">
                                                 </a>
                                                 {{-- <div class="product-labels">
                                                     <div class="shape1-badge3"><span>جدید</span></div>
@@ -308,5 +309,11 @@
             </div>
         </div>
     </div>
-    <!--==================== Related Products Section End ====================-->
+
+    {{-- <script>
+        function setMainImage(item) {
+            var imageSrc = $(item).attr('data-image');
+            dd(imageSrc)
+        }
+    </script> --}}
 @endsection

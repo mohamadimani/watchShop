@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Web\Header;
 
+use App\Models\AboutUs;
 use App\Models\Menu;
+use Database\Seeders\About;
 use Livewire\Component;
 
 class Index extends Component

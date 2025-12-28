@@ -41,6 +41,16 @@ class Product extends Model
         return $query->where('is_active', true);
     }
 
+    public function scopeWithOutEconomy($query)
+    {
+        return $query->where('is_economy', false);
+    }
+
+    public function scopeEconomy($query)
+    {
+        return $query->where('is_economy', true);
+    }
+
     public function colors()
     {
         return $this->belongsToMany(Color::class, 'color_product');
@@ -60,5 +70,4 @@ class Product extends Model
     {
         return $this->hasMany(ProductGallery::class);
     }
-
 }

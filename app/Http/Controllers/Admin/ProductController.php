@@ -38,6 +38,7 @@ class ProductController extends Controller
             'guaranty' => $request->guaranty,
             'brand_id' => $request->brand_id ?? 0,
             'created_by' => user()->id,
+            'is_economy' => $request->is_economy == 'yes' ? true : false,
         ]);
 
         if ($product) {
