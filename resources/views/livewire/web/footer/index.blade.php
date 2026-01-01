@@ -81,20 +81,24 @@
                         </div>
                     </div>
                     <div class="footer-widget media-widget">
-                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.snapchat.com/"><i class="fab fa-snapchat-ghost"></i></a>
-                        <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+                        @foreach ($socials as $social)
+                            @php
+                                $width = '30px';
+                                if ($social->icon == 'telegram') {
+                                    $width = '24px';
+                                }
+                            @endphp
+                            <a href="{{ $social->link }}"><img src="{{ GetImage('social/' . $social->icon . '.png') }}" style="width:{{ $width }};"></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col">
                     <div class="footer-widget category-widget my-5">
                         <h6 class="widget-title mb-sm-4">دسته بندی</h6>
                         <ul>
-                            <li><a class="" href="{{ route('products.search' , [1])}}">ساعت مردانه</a></li>
-                            <li><a class="" href="{{ route('products.search' , [2])}}">ساعت زنانه</a></li>
-                            <li><a class="" href="{{ route('products.search' , [3])}}">ساعت هوشمند</a></li>
+                            <li><a class="" href="{{ route('products.search', [1]) }}">ساعت مردانه</a></li>
+                            <li><a class="" href="{{ route('products.search', [2]) }}">ساعت زنانه</a></li>
+                            <li><a class="" href="{{ route('products.search', [3]) }}">ساعت هوشمند</a></li>
                         </ul>
                     </div>
                 </div>
