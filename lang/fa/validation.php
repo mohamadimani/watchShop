@@ -195,8 +195,8 @@ return [
         'email' => 'ایمیل',
         'first_name' => 'نام',
         'last_name' => 'نام خانوادگی',
-        'password' => 'گذرواژه',
-        'password_confirmation' => 'تاییدیه گذرواژه',
+        'password' => 'رمزعبور',
+        'password_confirmation' => 'تاییدیه رمزعبور',
         'city' => 'شهر',
         'state' => 'استان',
         'country' => 'کشور',
@@ -251,6 +251,7 @@ return [
         'brand_id' => 'برند',
         'colors' => 'رنگ',
         'is_economy' => 'محصول اقتصادی',
+        're_password' => 'تکرار رمزعبور',
     ],
 
 ];

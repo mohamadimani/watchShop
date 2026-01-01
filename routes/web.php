@@ -13,18 +13,22 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\PanelController;
+use App\Http\Controllers\UserAuthController;
+use App\Http\Middleware\CheckAdmin;
+use App\Http\Middleware\CheckUser;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 
 // auth
 Route::prefix('/')->group(function () {
-    Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+    Route::get('login', [UserAuthController::class, 'login'])->name('user.login')->middleware('guest');
     Route::get('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 });
 
 // admin panel
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth',CheckAdmin::class])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     Route::get('menus', [MenuController::class, 'index'])->name('menus');
     Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
@@ -46,7 +50,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('categories', [CategoriesController::class, 'index'])->name('categories.index');
     Route::get('categories/create', [CategoriesController::class, 'create'])->name('categories.create');
     Route::post('categories', [CategoriesController::class, 'store'])->name('categories.store');
-
 });
 
 // web
@@ -58,4 +61,18 @@ Route::middleware([])->group(function () {
     Route::get('products', [ProductController::class, 'index'])->name('products.index');
     Route::get('products/{product}/show', [ProductController::class, 'show'])->name('products.show');
     Route::get('products/{search}', [ProductController::class, 'search'])->name('products.search');
+
+    // user panel
+    Route::middleware([CheckUser::class])->prefix('user')->name("user.")->group(function () {
+        Route::get('/', [PanelController::class, 'index'])->name('panel.index');
+    });
+    
+    // auth
+    Route::prefix('user')->group(function () {
+        Route::get('/login', [UserAuthController::class, 'login'])->name('user.login')->middleware('guest');
+        Route::post('/login', [UserAuthController::class, 'doLogin'])->name('user.login')->middleware('guest');
+        Route::get('/register', [UserAuthController::class, 'register'])->name('user.register')->middleware('guest');
+        Route::post('/register', [UserAuthController::class, 'store'])->name('user.register')->middleware('guest');
+        Route::get('/logout', [UserAuthController::class, 'logout'])->name('user.logout')->middleware('auth');
+    });
 });

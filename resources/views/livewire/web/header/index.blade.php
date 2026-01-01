@@ -13,29 +13,29 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="h-100 d-flex align-items-center justify-content-center">
-                        <a class="navbar-brand" href="index.html"><img class="nav-logo" src="assets/images/logo/18.png" alt="Image not found !"></a>
+                        <a class="navbar-brand" href="{{ route('home.index') }}"><img class="nav-logo"  src="{{ GetImage('logo/18.png') }}" alt="mahdiyar watch" style="height: 30px"></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="margin-right-1 h-100 d-flex align-items-center justify-content-end">
                         <div class="sign-in position-relative font-general my-account-dropdown">
-                            <a href="my-account.html" class="has-dropdown d-flex align-items-center text-dark text-decoration-none" title="My Account">
+                            <a href="{{ route('user.panel.index') }}" class=" d-flex align-items-center text-dark  " title="My Account">
                                 <i class="flaticon-user-3 flat-small me-1"></i>
                             </a>
                         </div>
-                        <div class="wishlist-view">
+                        {{-- <div class="wishlist-view">
                             <a href="wishlist.html" class="position-relative top-quantity d-flex align-items-center text-white text-decoration-none">
                                 <i class="flaticon-like flat-small text-dark"></i>
                             </a>
-                        </div>
-                        <div class="refresh-view">
+                        </div> --}}
+                        {{-- <div class="refresh-view">
                             <a href="#" class="position-relative top-quantity d-flex align-items-center text-dark text-decoration-none">
                                 <i class="flaticon-shuffle flat-small text-dark"></i>
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="header-cart-2">
                             <a href="cart.html" class="cart has-cart-data" title="View Cart">
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">2</span></div>
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">0</span></div>
                             </a>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg nav-dark nav-primary-hover nav-line-active">
-                        <a class="navbar-brand d-lg-none" href="#"><img class="nav-logo" src="assets/images/logo/18.png" alt="Image not found!"></a>
+                        <a class="navbar-brand d-lg-none" href="#"><img class="nav-logo" src="{{ GetImage('logo/18.png') }}" alt="mahdiyar watch"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
                             <i class="navbar-toggler-icon flaticon-menu-2 flat-small text-dark"></i>
@@ -107,12 +107,12 @@
                 <div class="col-md-5 col-5">
                     <div class="margin-right-1 d-flex align-items-center justify-content-end h-100 md-py-10">
                         <div class="sign-in position-relative font-general my-account-dropdown">
-                            <a href="my-account.html" class="has-dropdown d-flex align-items-center text-dark text-decoration-none" title="My Account">
+                            <a href="{{ route('user.panel.index') }}" class="  d-flex align-items-center text-dark text-decoration-none" title="My Account">
                                 <i class="flaticon-user-3 flat-small me-1"></i>
                             </a>
 
                         </div>
-                        <div class="wishlist-view">
+                        {{-- <div class="wishlist-view">
                             <a href="wishlist.html" class="position-relative top-quantity d-flex align-items-center text-white text-decoration-none" title="Wishlist">
                                 <i class="flaticon-like flat-small text-dark"></i>
                             </a>
@@ -121,10 +121,10 @@
                             <a href="#" class="position-relative top-quantity d-flex align-items-center text-dark text-decoration-none">
                                 <i class="flaticon-shuffle flat-small text-dark"></i>
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="header-cart-2">
                             <a href="cart.html" class="cart has-cart-data" title="View Cart">
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">2</span></div>
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">0</span></div>
 
                             </a>
                         </div>

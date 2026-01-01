@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="products-header d-flex justify-content-between align-items-center py-10 px-20 bg-light md-mt-30">
                         <div class="products-header-right">
-                            <form class="woocommerce-ordering" method="get">
+                            {{-- <form class="woocommerce-ordering" method="get">
                                 <select name="orderby" class="orderby" aria-label="Shop order">
                                     <option value="1" selected="selected">مرتب سازی پیش فرض</option>
                                     <option value="mostSell">پرفروش ترین</option>
@@ -14,7 +14,7 @@
                                     <option value="expensive">گران ترین</option>
                                     <option value="cheap">ارزان ترین</option>
                                 </select>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
 
