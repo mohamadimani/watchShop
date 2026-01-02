@@ -170,13 +170,8 @@
                                                 <div class="product-image">
                                                     <a href="{{ route('products.show', [$mostViewedProduct->id]) }}" class="woocommerce-LoopProduct-link"><img
                                                             src="{{ GetImage('products/gallery/' . ($mostViewedProduct?->galleries()->where('position', 1)->first()?->image ?? 1)) }}"
-                                                            alt="{{ $mostViewedProduct->title }}"></a>
-                                                    <div class="hover-area">
-                                                        <div class="cart-button">
-                                                            <a href="#" class="button add_to_cart_button" data-bs-toggle="tooltip" data-bs-placement="right" title=""
-                                                                data-bs-original-title="افزودن به سبد خرید" aria-label="Add to Cart">افزودن به سبد خرید</a>
-                                                        </div>
-                                                    </div>
+                                                            alt="{{ $mostViewedProduct->title }}">
+                                                    </a>
                                                 </div>
                                                 <div class="product-info">
                                                     <h3 class="product-title"><a href="{{ route('products.show', [$mostViewedProduct->id]) }}">{{ $mostViewedProduct->title }}</a></h3>
@@ -219,13 +214,9 @@
                                                 <div class="product-image">
                                                     <a href="{{ route('products.show', [$mostViewedProduct->id]) }}" class="woocommerce-LoopProduct-link"><img
                                                             src="{{ GetImage('products/gallery/' . ($mostViewedProduct?->galleries()->where('position', 1)->first()?->image ?? 1)) }}"
-                                                            alt="{{ $mostViewedProduct->title }}"></a>
-                                                    <div class="hover-area">
-                                                        <div class="cart-button">
-                                                            <a href="#" class="button add_to_cart_button" data-bs-toggle="tooltip" data-bs-placement="right" title=""
-                                                                data-bs-original-title="افزودن به سبد خرید" aria-label="Add to Cart">افزودن به سبد خرید</a>
-                                                        </div>
-                                                    </div>
+                                                            alt="{{ $mostViewedProduct->title }}">
+                                                    </a>
+
                                                 </div>
                                                 <div class="product-info">
                                                     <h3 class="product-title"><a href="{{ route('products.show', [$mostViewedProduct->id]) }}">{{ $mostViewedProduct->title }}</a></h3>

@@ -72,7 +72,7 @@
                 <div class="col">
                     <div class="footer-widget my-5">
                         <div class="footer-logo mb-4">
-                            <a href="index.html"><img src="assets/images/logo/19.png" alt="Image not found!" /></a>
+                            <a href="index.html"><img src="{{ GetImage('logo/18.png') }}" alt="Image not found!" /></a>
                         </div>
                         <div class="widget-ecommerce-contact">
                             <div class="text-general mt-20">

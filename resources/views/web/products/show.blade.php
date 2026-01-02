@@ -36,7 +36,7 @@
     <div class="full-row">
         <div class="container">
             <div class="row single-product-wrapper">
-
+@include('admin.layouts.alerts')
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="product-images">
                         <div class="images-inner">
@@ -111,35 +111,55 @@
                                 </ul>
                             </div>
                         </div> --}}
-                        <form class="variations_form cart kapee-swatches-wrap" action="#" method="post" enctype="multipart/form-data">
+
+                        <style>
+                            .product_color {
+                                border-radius: 50%;
+                            }
+
+                            .selected {
+                                border-color: #05ff05 !important;
+                            }
+
+                            .cursor-pointer {
+                                cursor: pointer !important;
+                            }
+                        </style>
+                        <form class="variations_form cart kapee-swatches-wrap" action="{{ route('user.basket.store', [$product->id]) }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <table class="variations">
                                 <tr>
                                     <td class="label f-vazir-bold"><label>رنگ</label></td>
                                     <td class="value with-swatches">
                                         <div class="bigbazar-swatches">
                                             @foreach ($product->colors as $color)
-                                                <span class="swatch swatch-color swatch-circle swatch-selected" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    data-bs-original-title="{{ $color->name }}">
-                                                    <span class="bigbazar-tooltip" style="background-color:{{ $color->code }}" title="{{ $color->name }}">{{ $color->name }}</span>
+                                                <span class="swatch swatch-color swatch-circle swatch-selected   ">
+                                                    <label onclick="setColor(this,{{ $color->id }})" for="color{{ $color->id }}" class="product_color cursor-pointer w-100"
+                                                        style="background-color:{{ $color->code }}">&nbsp;</label>
+                                                    <input name="color" type="radio" value="{{ $color->id }}" id="color{{ $color->id }}" class="mt-3">
                                                 </span>
                                             @endforeach
                                         </div>
                                     </td>
                                 </tr>
                             </table>
+                            <script>
+                                function setColor(item, colorId) {
+                                    $('.swatch-selected').removeClass('selected')
+                                    $(item).parent('.swatch-selected').addClass('selected')
+
+                                }
+                            </script>
                             <div class="single_variation_wrap">
                                 <div class="quantity">
-                                    <input type="number" min="1" max="9" step="1" value="1">
+                                    <input name="count" type="number" min="1" max="9" step="1" value="1">
                                 </div>
                                 <div class="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled">
                                     <button type="submit" class="single_add_to_cart_button button alt single_add_to_cart_ajax_button">افزودن به سبد</button>
-                                    <div class="bigbazar-quick-buy">
-                                        <button class="bigbazar_quick_buy_button bigbazar_quick_buy_variable bigbazar_quick_buy_58" value="Buy Now">همین حالا خرید کن!</button>
-                                    </div>
                                 </div>
                             </div>
                         </form>
-                        <div class="yith-wcwl-add-to-wishlist wishlist-fragment">
+                        {{-- <div class="yith-wcwl-add-to-wishlist wishlist-fragment">
                             <div class="wishlist-button">
                                 <a class="add_to_wishlist" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="افزودن به علاقه مندی"
                                     aria-label="Add to Wishlist">افزودن به علاقه مندی</a>
@@ -148,7 +168,7 @@
                                 <a class="compare button" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="مقایسه کالا" aria-label="Compare">مقایسه
                                     کالا</a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="bigbazar-wc-message"></div>
                     </div>
                 </div>
@@ -283,19 +303,6 @@
                                                     </div>
                                                     <div class="sold-items">
                                                         <span> {{ $product->review }}</span> <span>بازدید</span>
-                                                    </div>
-                                                </div>
-                                                <div class="hover-area">
-                                                    <div class="cart-button">
-                                                        <a href="#" class="button add_to_cart_button">افزودن به سبد خرید</a>
-                                                    </div>
-                                                    <div class="wishlist-button">
-                                                        <a class="add_to_wishlist" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                            data-bs-original-title="افزودن به علاقه مندی" aria-label="Add to Wishlist">افزودن به علاقه مندی</a>
-                                                    </div>
-                                                    <div class="compare-button">
-                                                        <a class="compare button" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="مقایسه"
-                                                            aria-label="Compare">مقایسه</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -10,7 +10,7 @@
                             <div class="container">
                                 <div class="row g-3 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cos-1 d-flex">
 
-                                    <a href="{{ route('contact-us.index') }}" class="d-block">
+                                    <a href="{{ route('user.basket.index') }}" class="d-block">
                                         <div class="col">
                                             <div class="bg-light hover-bg-primary hover-text-white transation p-40 text-center h-100">
                                                 <i class="flaticon-seo flat-large text-secondary"></i>
@@ -18,7 +18,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="{{ route('contact-us.index') }}" class="d-block">
+                                    <a href="{{ route('user.orders.index') }}" class="d-block">
                                         <div class="col">
                                             <div class="bg-light hover-bg-primary hover-text-white transation p-40 text-center h-100">
                                                 <i class="flaticon-refund flat-large text-secondary"></i>

@@ -1,5 +1,4 @@
 <header class="ecommerce-header">
-
     <div class="middle-header d-none d-lg-block py-4">
         <div class="container">
             <div class="row">
@@ -34,8 +33,8 @@
                             </a>
                         </div> --}}
                         <div class="header-cart-2">
-                            <a href="cart.html" class="cart has-cart-data" title="View Cart">
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">0</span></div>
+                            <a href="{{ route('user.basket.index') }}" class="cart" >
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()->baskets->count() }}</span></div>
                             </a>
                         </div>
                     </div>
@@ -123,9 +122,8 @@
                             </a>
                         </div> --}}
                         <div class="header-cart-2">
-                            <a href="cart.html" class="cart has-cart-data" title="View Cart">
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">0</span></div>
-
+                            <a href="{{ route('user.basket.index') }}" class="cart">
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()->baskets->count() }}</span></div>
                             </a>
                         </div>
                     </div>

@@ -63,10 +63,14 @@ Route::middleware([])->group(function () {
     Route::get('products/{search}', [ProductController::class, 'search'])->name('products.search');
 
     // user panel
-    Route::middleware([CheckUser::class])->prefix('user')->name("user.")->group(function () {
-        Route::get('/', [PanelController::class, 'index'])->name('panel.index');
+    Route::middleware([CheckUser::class])->prefix('user')->group(function () {
+        Route::get('/', [PanelController::class, 'index'])->name('user.panel.index');
+        Route::get('basket', [PanelController::class, 'basket'])->name('user.basket.index');
+        Route::post('basket/{product}', [PanelController::class, 'basketStore'])->name('user.basket.store');
+        Route::get('basket/{basket}', [PanelController::class, 'basketDelete'])->name('user.basket.delete');
+        Route::get('orders', [PanelController::class, 'orders'])->name('user.orders.index');
     });
-    
+
     // auth
     Route::prefix('user')->group(function () {
         Route::get('/login', [UserAuthController::class, 'login'])->name('user.login')->middleware('guest');

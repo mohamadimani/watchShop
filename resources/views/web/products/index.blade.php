@@ -52,7 +52,7 @@
                                                         <span> {{ $product->review }}</span> <span>بازدید</span>
                                                     </div>
                                                 </div>
-                                                <div class="hover-area">
+                                                {{-- <div class="hover-area">
                                                     <div class="cart-button">
                                                         <a href="#" class="button add_to_cart_button">افزودن به سبد خرید</a>
                                                     </div>
@@ -64,7 +64,7 @@
                                                         <a class="compare button" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="مقایسه"
                                                             aria-label="Compare">مقایسه</a>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>

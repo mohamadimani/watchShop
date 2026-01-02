@@ -17,12 +17,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // $about = AboutUs::first();
-        // $services = Service::active()->orderBy('id', 'DESC')->get();
-        // $menus = Menu::active()->get();
-        // $socials = Social::active()->get();
-        // $feedbacks = Feedback::active()->get();
-
         $brands = Brand::active()->get();
         $mostViewedProducts = Product::active()->WithOutEconomy()->orderBy('review', 'DESC')->limit(4)->get();
         $mostSellProducts = Product::active()->WithOutEconomy()->orderBy('review', 'DESC')->limit(4)->get();
