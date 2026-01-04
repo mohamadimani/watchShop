@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Middleware\CheckAdmin;
@@ -28,7 +29,7 @@ Route::prefix('/')->group(function () {
 });
 
 // admin panel
-Route::middleware(['auth',CheckAdmin::class])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', CheckAdmin::class])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     Route::get('menus', [MenuController::class, 'index'])->name('menus');
     Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
@@ -65,10 +66,13 @@ Route::middleware([])->group(function () {
     // user panel
     Route::middleware([CheckUser::class])->prefix('user')->group(function () {
         Route::get('/', [PanelController::class, 'index'])->name('user.panel.index');
+        // basket
         Route::get('basket', [PanelController::class, 'basket'])->name('user.basket.index');
         Route::post('basket/{product}', [PanelController::class, 'basketStore'])->name('user.basket.store');
         Route::get('basket/{basket}', [PanelController::class, 'basketDelete'])->name('user.basket.delete');
-        Route::get('orders', [PanelController::class, 'orders'])->name('user.orders.index');
+        // orders
+        Route::get('orders', [OrderController::class, 'index'])->name('user.orders.index');
+        Route::post('orders', [OrderController::class, 'store'])->name('user.orders.store');
     });
 
     // auth

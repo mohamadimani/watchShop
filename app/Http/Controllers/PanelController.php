@@ -19,10 +19,6 @@ class PanelController extends Controller
         return view('web.basket.index', compact('baskets'));
     }
 
-    public function orders()
-    {
-        return view('web.basket.index');
-    }
 
     public function basketDelete(Basket $basket)
     {

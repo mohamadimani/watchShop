@@ -69,7 +69,7 @@
                                 </tr>
                             </table>
                             <div class="wc-proceed-to-checkout">
-                                <a href="#" class="checkout-button">ادامـه خرید</a>
+                                <a href="{{ route('user.orders.store') }}" class="checkout-button">ثبت سفارش</a>
                             </div>
                         </div>
                     </div>
