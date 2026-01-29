@@ -25,7 +25,9 @@
                                 @endphp
                                 <tr class="woocommerce-cart-form__cart-item cart_item">
                                     <td class="product-thumbnail">
-                                        <a target="_blank" href="{{ GetImage('products/gallery/' . ($basket->product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}"><img src="{{ GetImage('products/gallery/' . ($basket->product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}" alt="{{ $basket->product->title }}"></a>
+                                        <a target="_blank" href="{{ GetImage('products/gallery/' . ($basket->product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}"><img
+                                                src="{{ GetImage('products/gallery/' . ($basket->product?->galleries()->where('position', 1)->first()?->image ?? 1)) }}"
+                                                alt="{{ $basket->product->title }}"></a>
                                     </td>
                                     <td class="product-name">
                                         <a href="{{ route('products.show', [$basket->product_id]) }}">{{ $basket->product->title }}</a>
@@ -38,7 +40,7 @@
                                         </span>
                                     </td>
                                     <td class="product-remove">
-                                        <a href="{{ route('user.basket.delete',[$basket->id]) }}" class="remove">×</a>
+                                        <a href="{{ route('user.basket.delete', [$basket->id]) }}" class="remove">×</a>
                                     </td>
                                 </tr>
                             @endforeach
