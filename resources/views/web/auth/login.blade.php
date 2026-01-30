@@ -10,7 +10,7 @@
                                 <div class="sign-in-form">
                                     <h3>اطلاعات حساب کاربری</h3>
                                     @include('admin.layouts.alerts')
-                                    <form class="woocommerce-form-login" method="post" action="{{ route('user.login') }}">
+                                    <form class="woocommerce-form-login" method="post" action="{{ route('user.do-login') }}">
                                         @csrf
                                         <p>
                                             <label for="mobile">موبایل<span class="required">*</span></label>

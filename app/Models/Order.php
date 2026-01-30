@@ -19,4 +19,9 @@ class Order extends Model
         'create_by',
         'deleted_by',
     ];
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

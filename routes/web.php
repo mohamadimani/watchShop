@@ -72,13 +72,14 @@ Route::middleware([])->group(function () {
         Route::get('basket/{basket}', [PanelController::class, 'basketDelete'])->name('user.basket.delete');
         // orders
         Route::get('orders', [OrderController::class, 'index'])->name('user.orders.index');
-        Route::post('orders', [OrderController::class, 'store'])->name('user.orders.store');
+        Route::get('orders/store', [OrderController::class, 'store'])->name('user.orders.store');
+        Route::get('orders/{order}/show', [OrderController::class, 'show'])->name('user.orders.show');
     });
 
     // auth
     Route::prefix('user')->group(function () {
         Route::get('/login', [UserAuthController::class, 'login'])->name('user.login')->middleware('guest');
-        Route::post('/login', [UserAuthController::class, 'doLogin'])->name('user.login')->middleware('guest');
+        Route::post('/login', [UserAuthController::class, 'doLogin'])->name('user.do-login')->middleware('guest');
         Route::get('/register', [UserAuthController::class, 'register'])->name('user.register')->middleware('guest');
         Route::post('/register', [UserAuthController::class, 'store'])->name('user.register')->middleware('guest');
         Route::get('/logout', [UserAuthController::class, 'logout'])->name('user.logout')->middleware('auth');

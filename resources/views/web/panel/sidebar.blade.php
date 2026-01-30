@@ -3,8 +3,8 @@
         <div class="widget border-0 py-0 widget_categories">
             <h4 class="widget-title down-line">منو</h4>
             <ul>
-                <li><a href="#">سبد خرید</a></li>
-                <li><a href="#">سفارش ها</a></li>
+                <li><a href="{{ route('user.basket.index') }}">سبد خرید</a></li>
+                <li><a href="{{ route('user.orders.index') }}">سفارش ها</a></li>
                 <li><a href="{{ route('contact-us.index') }}">پشتیبانی </a></li>
                 <li><a href="{{ route('user.logout') }}">خروج</a></li>
             </ul>

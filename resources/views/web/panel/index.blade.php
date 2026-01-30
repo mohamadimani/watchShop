@@ -14,7 +14,7 @@
                                         <div class="col">
                                             <div class="bg-light hover-bg-primary hover-text-white transation p-40 text-center h-100">
                                                 <i class="flaticon-seo flat-large text-secondary"></i>
-                                                <h4 class="mt-4 f-vazir"><span href="#" class="text-secondary hover-text-white">سبد خرید</span></h4>
+                                                <h4 class="mt-4 f-vazir"><span class="text-secondary hover-text-white">سبد خرید</span></h4>
                                             </div>
                                         </div>
                                     </a>
@@ -22,7 +22,7 @@
                                         <div class="col">
                                             <div class="bg-light hover-bg-primary hover-text-white transation p-40 text-center h-100">
                                                 <i class="flaticon-refund flat-large text-secondary"></i>
-                                                <h4 class="mt-4 f-vazir"><span href="#" class="text-secondary hover-text-white">سفارش ها</span></h4>
+                                                <h4 class="mt-4 f-vazir"><span class="text-secondary hover-text-white">سفارش ها</span></h4>
                                             </div>
                                         </div>
                                     </a>
@@ -38,7 +38,7 @@
                                         <div class="col">
                                             <div class="bg-light hover-bg-primary hover-text-white transation p-40 text-center h-100">
                                                 <i class="flaticon-warning flat-large text-secondary"></i>
-                                                <h4 class="mt-4 f-vazir"><span href="#" class="text-secondary hover-text-white">خروج</span></h4>
+                                                <h4 class="mt-4 f-vazir"><span class="text-secondary hover-text-white">خروج</span></h4>
                                             </div>
                                         </div>
                                     </a>
