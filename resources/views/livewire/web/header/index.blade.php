@@ -34,7 +34,7 @@
                         </div> --}}
                         <div class="header-cart-2">
                             <a href="{{ route('user.basket.index') }}" class="cart" >
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()->baskets->count() }}</span></div>
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()?->baskets?->count() ?? 0 }}</span></div>
                             </a>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                         </div> --}}
                         <div class="header-cart-2">
                             <a href="{{ route('user.basket.index') }}" class="cart">
-                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()->baskets->count() }}</span></div>
+                                <div class="cart-icon"><i class="flaticon-add-to-basket flat-small"></i> <span class="header-cart-count">{{ user()?->baskets?->count() ?? 0 }}</span></div>
                             </a>
                         </div>
                     </div>
