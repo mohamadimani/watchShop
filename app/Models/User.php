@@ -17,6 +17,7 @@ class User extends Authenticatable
         'password',
         'address',
         'province',
+        'is_admin',
     ];
 
     public function baskets()

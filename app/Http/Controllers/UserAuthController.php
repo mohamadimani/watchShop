@@ -63,6 +63,7 @@ class UserAuthController extends Controller
             'name' => ' ',
             'mobile' => $request->mobile,
             'password' => Hash::make($request->password),
+            'is_admin' => false,
         ]);
 
         Auth::login($user);
