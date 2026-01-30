@@ -17,5 +17,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 'ftp.m-w-g.ir'
-        username: 'watch@m-w-g.ir'
+        username: 'watchshop@m-w-g.ir'
         password: 'm09191930406'
